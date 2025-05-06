@@ -1,8 +1,6 @@
-// index.js - Improved script to set up the webhook
+// index.js - Script to set up the webhook
 const axios = require('axios');
-
-// Your bot token
-const token = '7878181735:AAGwUtDBTQW7VOX9IQBTiIsd1QCHA9kFEAU';
+const { token } = require('./src/config/botConfig');
 
 // Your Vercel deployment URL (without trailing slash)
 const url = 'https://bot-fawn-two.vercel.app';
