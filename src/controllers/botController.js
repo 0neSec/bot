@@ -229,7 +229,7 @@ const setupBotHandlers = () => {
   bot.on('message', handleMessage);
   
   // Special test command
-  bot.onText(/\/testbantuan/, (msg) => {
+  bot.onText(/\/bantuan/, (msg) => {
     try {
       const chatId = msg.chat.id;
       bot.sendMessage(chatId, 'Testing bantuan functionality...');
