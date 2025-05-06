@@ -1,20 +1,14 @@
 {
   "name": "telegram-bot",
   "version": "1.0.0",
-  "description": "Telegram bot using Express.js",
+  "description": "Telegram bot for Vercel",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "setWebhook": "node setWebhook.js"
   },
   "dependencies": {
-    "axios": "^1.6.0",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "node-telegram-bot-api": "^0.66.0",
-    "telegraf": "^4.15.0"
-  },
-  "devDependencies": {
-    "nodemon": "^3.0.1"
+    "axios": "^1.6.2",
+    "node-telegram-bot-api": "^0.64.0"
   }
 }
