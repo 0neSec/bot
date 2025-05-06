@@ -18,7 +18,7 @@ const bot = new TelegramBot(token, {
 });
 
 // Set webhook URL - replace with your actual hosting URL
-const url = process.env.APP_URL || 'bot-production-6453.up.railway.app';
+const url = process.env.APP_URL || 'https://bot-production-6453.up.railway.app';
 bot.setWebHook(`${url}/bot${token}`);
 
 // Handle different message types
