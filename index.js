@@ -10,7 +10,7 @@ const axios = require('axios');
 const token = '7878181735:AAGwUtDBTQW7VOX9IQBTiIsd1QCHA9kFEAU';
 
 // Your Vercel deployment URL (without trailing slash)
-const url = 'https://bot-sigma-amber.vercel.app';
+const url = 'https://bot-fawn-two.vercel.app';
 
 async function setWebhook() {
   try {
