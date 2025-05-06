@@ -105,7 +105,7 @@ bot.on('callback_query', (callbackQuery) => {
         bot.sendMessage(chatId, 
           `📋 *Informasi Profil*\n\n` +
           `*Nama:* ${userInfo.nama}\n` +
-          `*Username:* @${userInfo.username}\n` +
+          `*Username:* @${userInfo.firstName}\n` +
           `*ID Telegram:* ${userInfo.id}`,
           { parse_mode: 'Markdown' }
         );
