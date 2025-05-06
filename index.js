@@ -11,8 +11,15 @@ const app = express();
 app.use(express.json());
 
 // Set up the Telegram bot
-// Use polling for development
-const bot = new TelegramBot(token, { polling: true });
+// For production, use webhook instead of polling
+const bot = new TelegramBot(token, { 
+  // Remove polling for production
+  // polling: true 
+});
+
+// Set webhook URL - replace 'your-app-url.com' with your actual hosting URL
+const url = 'https://bot-sigma-amber.vercel.app';
+bot.setWebHook(`${url}/bot${token}`);
 
 // Handle different message types
 bot.on('message', (msg) => {
@@ -48,26 +55,25 @@ app.get('/', (req, res) => {
   res.send('Telegram Bot Server is running!');
 });
 
-// Set up webhook (for production use)
-// app.post(`/bot${token}`, (req, res) => {
-//   bot.processUpdate(req.body);
-//   res.sendStatus(200);
-// });
+// Process webhook requests - ENABLE THIS FOR PRODUCTION
+app.post(`/bot${token}`, (req, res) => {
+  bot.processUpdate(req.body);
+  res.sendStatus(200);
+});
 
 // Start the server
 app.listen(port, () => {
   console.log(`Express server is listening on port ${port}`);
-  console.log('Telegram bot is running...');
+  console.log('Telegram bot is running in webhook mode...');
 });
 
 // Error handling
-bot.on('polling_error', (error) => {
-  console.error('Polling error:', error);
+bot.on('error', (error) => {
+  console.error('Bot error:', error);
 });
 
 // Graceful shutdown
 process.on('SIGINT', () => {
-  bot.stopPolling();
-  console.log('Bot stopped polling');
+  console.log('Bot shutting down...');
   process.exit(0);
 });
