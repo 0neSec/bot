@@ -17,8 +17,8 @@ const bot = new TelegramBot(token, {
   // polling: true 
 });
 
-// Set webhook URL - replace 'your-app-url.com' with your actual hosting URL
-const url = 'https://bot-sigma-amber.vercel.app';
+// Set webhook URL - replace with your actual hosting URL
+const url = process.env.APP_URL || 'https://bot-sigma-amber.vercel.app';
 bot.setWebHook(`${url}/bot${token}`);
 
 // Handle different message types
