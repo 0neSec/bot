@@ -1,5 +1,5 @@
 // api/webhook.js - For Vercel serverless function
-const { setupBotHandlers } = require('../src/controllers/indexController');
+const { setupBotHandlers } = require('../src/controllers/index');
 const { handleWebhook } = require('../src/routes/webhookRoute');
 
 // Initialize bot handlers
