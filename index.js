@@ -30,8 +30,8 @@ async function setWebhook() {
     
     // Test sending a message to yourself (replace with your chat ID)
     // You can get your chat ID by sending a message to @userinfobot on Telegram
-    const yourChatId = "YOUR_CHAT_ID"; // Replace with your actual chat ID
-    if (yourChatId !== "YOUR_CHAT_ID") {
+    const yourChatId = "6027427469"; // Replace with your actual chat ID
+    if (yourChatId !== "6027427469") {
       const testMessageResponse = await axios.post(
         `https://api.telegram.org/bot${token}/sendMessage`,
         {
